@@ -159,3 +159,25 @@ footer a::after {
     background: #00b4ff;
     transition: width 0.3s;
 }
+
+ul img {
+    width: 3%;
+    height: auto;
+}
+
+#zloto {
+    color: gold;
+}
+
+#platyna {
+    color: #8f8e8d
+}
+
+#diament {
+    color: #088cfc;
+}
+
+#tytul1 {
+    color: rgb(40, 114, 40);
+    font-weight: bold;
+}
