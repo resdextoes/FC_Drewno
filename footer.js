@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    fetch("/footer.html")
+    fetch("footer.html")
         .then(response => response.text())
         .then(data => {
             const footer = document.getElementById("footer");
@@ -8,4 +8,5 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         })
         .catch(err => console.error("Błąd ładowania footera:", err));
+
 });
