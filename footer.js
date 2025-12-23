@@ -8,5 +8,4 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         })
         .catch(err => console.error("Błąd ładowania footera:", err));
-
 });
