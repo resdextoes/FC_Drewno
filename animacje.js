@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* ===== HEADER ANIMACJA ===== */
     const header = document.querySelector("header");
     if (header) {
         header.style.opacity = "0";
@@ -12,7 +11,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 100);
     }
 
-    /* ===== SEKCJE – ANIMACJA PRZY SCROLLU ===== */
     const sections = document.querySelectorAll("section");
 
     sections.forEach(section => {
@@ -37,7 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("scroll", revealOnScroll);
     revealOnScroll();
 
-    /* ===== HOVER EFFECT – KARTY ===== */
     sections.forEach(section => {
         section.addEventListener("mouseenter", () => {
             section.style.transform = "scale(1.02)";
@@ -50,7 +47,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    /* ===== LOGO ANIMACJA (STRONA GŁÓWNA) ===== */
     const logo = document.querySelector("img");
 
     if (logo) {

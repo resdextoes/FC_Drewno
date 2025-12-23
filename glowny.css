@@ -181,3 +181,59 @@ ul img {
     color: rgb(40, 114, 40);
     font-weight: bold;
 }
+
+
+.discord-icon {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.discord-icon::before {
+    content: "";
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        rgba(88,101,242,0.5) 0%,
+        rgba(88,101,242,0.25) 40%,
+        rgba(88,101,242,0.05) 65%,
+        transparent 70%
+    );
+    animation: discordPulse 2.5s ease-out infinite;
+    z-index: -1;
+}
+
+.discord-icon img {
+    width: 120px;
+    z-index: 1;
+    filter: drop-shadow(0 0 20px rgba(88,101,242,0.6));
+    transition: transform 0.3s ease;
+}
+
+.discord-icon img:hover {
+    transform: scale(1.1);
+}
+
+@keyframes discordPulse {
+    0% {
+        transform: scale(0.7);
+        opacity: 0.9;
+    }
+    70% {
+        transform: scale(1.1);
+        opacity: 0.2;
+    }
+    100% {
+        transform: scale(1.3);
+        opacity: 0;
+    }
+}
+
+.discord-section {
+    max-width: 30%;
+    padding: 30px 35px;
+}
