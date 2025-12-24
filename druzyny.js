@@ -1,6 +1,6 @@
 const TRACKER_LINKS = {
     "1119898337223639040": "https://rocketleague.tracker.network/rocket-league/profile/epic/G0koo_/overview",
-    "1260529902495727626": "https://rocketleague.tracker.network/rocket-league/profile/epic/hubonrl./overview",
+    "1260529902495727626": "https://rocketleague.tracker.network/rocket-league/profile/epic/%20ᵉˡᶦᵗᵉhubonち/overview",
     "899678477463220305": "https://rocketleague.tracker.network/rocket-league/profile/epic/%20Prawą%20Ręką/overview",
     "929052879879299193": "https://rocketleague.tracker.network/rocket-league/profile/epic/%20I%20do%20pieca%20Fizzu/overview",
     "1060926858759245854": "https://rocketleague.tracker.network/rocket-league/profile/epic/%20MoLI4./overview",
@@ -15,18 +15,16 @@ const AKADEMIA_IDS = [
 
 async function loadAdmins() {
     const container = document.getElementById("admins");
-    container.innerHTML = "<p>Ładowanie informacji z Discorda...</p>";
+    if (!container) return;
 
     try {
         const response = await fetch("https://discord-api-jqj5.onrender.com/admins");
-        
-        if (!response.ok) throw new Error("Problem z serwerem");
-        
+        if (!response.ok) throw new Error("API Offline");
         const members = await response.json();
-        
+
         container.innerHTML = `
             <div class="team-group">
-                <h2>Główny skład</h2>
+                <h2>Osoby</h2>
                 <div id="group-main" class="admins-container"></div>
             </div>
             <div class="team-group">
@@ -41,11 +39,15 @@ async function loadAdmins() {
         members.forEach(member => {
             const trackerUrl = TRACKER_LINKS[member.id] || "#";
             const isAkademia = AKADEMIA_IDS.includes(member.id);
+            const statusClass = member.status || 'offline';
             
             const cardHTML = `
-                <a href="${trackerUrl}" target="_blank" class="admin-link">
+                <a href="${trackerUrl}" target="_blank" class="admin-link status-${statusClass}">
                     <div class="admin-card">
-                        <img src="${member.avatar}" class="admin-avatar" alt="${member.username}">
+                        <div class="avatar-wrapper">
+                            <img src="${member.avatar}" class="admin-avatar" alt="${member.username}">
+                            <span class="status-dot ${statusClass}"></span>
+                        </div>
                         <p class="admin-name">${member.username}</p>
                     </div>
                 </a>
@@ -58,19 +60,12 @@ async function loadAdmins() {
             }
         });
 
-        if (mainGroup.innerHTML === "") mainGroup.parentElement.remove();
-        if (akademiaGroup.innerHTML === "") akademiaGroup.parentElement.remove();
-
     } catch (error) {
-        console.error("Błąd:", error);
-        
         let secondsLeft = 10;
         const countdown = setInterval(() => {
             container.innerHTML = `
-                <div style="text-align: center; color: #8495a5ff; padding: 20px;">
-                    <p>Budzenie serwera informacyjnego (może to zająć chwilę)...</p>
-                    <br>
-                    <p>Automatyczne odświeżenie za: <strong>${secondsLeft}s</strong></p>
+                <div style="text-align: center; color: white; padding: 20px; width: 100%;">
+                    Budzenie servera informacyjnego... <strong>${secondsLeft}s</strong>
                 </div>
             `;
             secondsLeft--;
@@ -82,6 +77,4 @@ async function loadAdmins() {
     }
 }
 
-
 document.addEventListener("DOMContentLoaded", loadAdmins);
-
