@@ -2,9 +2,13 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch("footer.html")
         .then(response => response.text())
         .then(data => {
-            const footer = document.getElementById("footer");
-            if (footer) {
-                footer.innerHTML = data;
+            const footerContainer = document.getElementById("footer");
+            if (footerContainer) {
+                footerContainer.innerHTML = data;
+                const yearSpan = document.getElementById("current-year");
+                if (yearSpan) {
+                    yearSpan.textContent = new Date().getFullYear();
+                }
             }
         })
         .catch(err => console.error("Błąd ładowania footera:", err));
