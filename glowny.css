@@ -207,6 +207,28 @@ footer a {
     }
 }
 
+    ul img {
+        width: 3%;
+        height: auto;
+    }
+
+    #zloto {
+        color: gold;
+    }
+
+    #platyna {
+        color: #8f8e8d
+    }
+
+    #diament {
+        color: #088cfc;
+    }
+
+    #tytul1 {
+        color: rgb(40, 114, 40);
+        font-weight: bold;
+    }
+
 @media (max-width: 768px) {
     header {
         flex-direction: column;
@@ -244,6 +266,28 @@ footer a {
         position: static;
         margin-top: 40px;
         text-align: center;
+    }
+
+    ul img {
+    width: 5%;
+    height: auto;
+    }
+
+    #zloto {
+        color: gold;
+    }
+
+    #platyna {
+        color: #8f8e8d
+    }
+
+    #diament {
+        color: #088cfc;
+    }
+
+    #tytul1 {
+        color: rgb(40, 114, 40);
+        font-weight: bold;
     }
 }
 
