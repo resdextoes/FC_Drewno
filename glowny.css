@@ -130,7 +130,7 @@ section li a:hover {
 footer {
     justify-content: flex-end;
     text-align: right;
-    position: absolute;
+    position: fixed;
     right: 2%;
     bottom: 2%;
     backdrop-filter: blur(10px);
