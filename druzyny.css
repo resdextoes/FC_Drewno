@@ -1,0 +1,87 @@
+section.admin-section {
+    max-width: 1300px !important;
+    width: 98% !important;
+    margin: 40px auto !important;
+    padding: 20px !important;
+    display: block !important;
+}
+
+#admins {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    gap: 20px !important;
+    width: 100% !important;
+}
+
+.team-group {
+    flex: 1 !important;
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 20px !important;
+    padding: 30px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    min-width: 0 !important;
+}
+
+.team-group h2 {
+    color: #00b4ff !important;
+    font-size: 22px !important;
+    text-transform: uppercase !important;
+    margin: 0 0 30px 0 !important;
+    padding: 0 !important;
+    text-align: center !important;
+    width: 100% !important;
+}
+
+.admins-container {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 15px !important;
+    width: 100% !important;
+}
+
+.admin-card {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 15px !important;
+    padding: 15px !important;
+    width: 140px !important;
+    height: 160px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+.admin-avatar {
+    width: 75px !important;
+    height: 75px !important;
+    border-radius: 50% !important;
+    margin-bottom: 10px !important;
+    border: 3px solid #00b4ff !important;
+    box-shadow: 0 0 15px rgba(0, 180, 255, 0.5) !important;
+    object-fit: cover !important;
+}
+
+.admin-name {
+    color: #ffffff !important;
+    font-weight: bold !important;
+    font-size: 13px !important;
+    text-align: center !important;
+}
+
+@media (max-width: 1000px) {
+    #admins {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    .team-group {
+        width: 100% !important;
+    }
+}

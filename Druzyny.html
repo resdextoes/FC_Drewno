@@ -8,9 +8,11 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Drużyny</title>
     <link rel="stylesheet" href="glowny.css">
+    <link rel="stylesheet" href="druzyny.css">
     <link rel="icon" type="image/png" href="logo.png">
-    <script src="footer.js"></script>
-    <script src="animacje.js"></script>
+    <script src="footer.js" defer></script>
+    <script src="animacje.js" defer></script>
+    <script src="druzyny.js" defer></script>
 </head>
 <body>
     <header>
@@ -21,18 +23,14 @@
         <a href="Druzyny.html">Drużyny</a>
         <a href="Osiagniecia.html">Osiągnięcia</a>
     </header>
-    <section>
-        <h1>Osoby</h1>
-        <li><a href="https://rocketleague.tracker.network/rocket-league/profile/epic/G0koo_/overview">Gokoo</a></li>
-        <li><a href="https://rocketleague.tracker.network/rocket-league/profile/epic/%20ᵉˡᶦᵗᵉhubonち/overview">Hubon</a></li>
-        <li><a href="https://rocketleague.tracker.network/rocket-league/profile/epic/%20Prawą%20Ręką/overview">Resdex</a></li>
-    </section>
-    <section>
-        <h2>Akademia</h2>
-        <li><a href="https://rocketleague.tracker.network/rocket-league/profile/epic/%20I%20do%20pieca%20Fizzu/overview">Fizzu</a></li>
-        <li><a href="https://rocketleague.tracker.network/rocket-league/profile/epic/%20MoLI4./overview">Moli</a></li>
-        <li><a href="https://rocketleague.tracker.network/rocket-league/profile/epic/%20PeDrORl.4/overview">Kalgon3333</a></li>
-    </section>
+    <main>
+        <section class="admin-section">
+            <h2 style="text-align: center; margin-bottom: 30px;">Drużyna</h2> 
+            <div id="admins">
+                <p>Ładowanie ekipy...</p>
+            </div>
+        </section>
+    </main>
     <div id="footer"></div>
 </body>
 </html>
