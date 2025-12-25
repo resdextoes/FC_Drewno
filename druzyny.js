@@ -1,6 +1,6 @@
 const TRACKER_LINKS = {
     "1119898337223639040": "https://rocketleague.tracker.network/rocket-league/profile/epic/G0koo_/overview",
-    "1260529902495727626": "https://rocketleague.tracker.network/rocket-league/profile/epic/%20ᵉˡᶦᵗᵉhubonち/overview",
+    "1260529902495727626": "https://rocketleague.tracker.network/rocket-league/profile/epic/hubonrl./overview",
     "899678477463220305": "https://rocketleague.tracker.network/rocket-league/profile/epic/%20Prawą%20Ręką/overview",
     "929052879879299193": "https://rocketleague.tracker.network/rocket-league/profile/epic/%20I%20do%20pieca%20Fizzu/overview",
     "1060926858759245854": "https://rocketleague.tracker.network/rocket-league/profile/epic/%20MoLI4./overview",
