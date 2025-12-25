@@ -1,6 +1,6 @@
 section.admin-section {
     max-width: 1300px !important;
-    width: 98% !important;
+    width: fit-content !important;
     margin: 40px auto !important;
     padding: 20px !important;
     display: block !important;
@@ -19,32 +19,35 @@ section.admin-section {
     display: flex !important;
     flex-direction: row !important;
     justify-content: center !important;
-    align-items: stretch !important;
-    gap: 25px !important;
+    align-items: flex-start !important;
+    gap: 15px !important;
     width: 100% !important;
 }
 
 .team-group {
-    flex: 1 !important;
+    flex: 0 1 auto !important;
     background: rgba(255, 255, 255, 0.03) !important;
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
     border-radius: 20px !important;
-    padding: 40px 20px !important;
+    padding: 10px 20px 20px 20px !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     justify-content: flex-start !important;
     min-width: 0 !important;
-    height: 25% !important;
+    height: auto !important;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+    width: fit-content !important;
+    min-height: min-content !important;
 }
 
 .team-group h2 {
     color: #00b4ff !important;
     font-size: 24px !important;
-    margin: 0 0 35px 0 !important;
+    margin: 0 0 0 0 !important;
     text-align: center !important;
     width: 100% !important;
+    margin-bottom: 20px !important;
 }
 
 .admins-container {
@@ -53,6 +56,7 @@ section.admin-section {
     justify-content: center !important;
     gap: 20px !important;
     width: 100% !important;
+    height: fit-content !important;
 }
 
 .admin-link {
@@ -64,9 +68,9 @@ section.admin-section {
     background: rgba(255, 255, 255, 0.05) !important;
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
     border-radius: 15px !important;
-    padding: 20px 15px !important;
+    padding: 15px 10px !important;
     width: 150px !important;
-    min-height: 180px !important;
+    min-height: auto !important;
     height: auto !important;
     display: flex !important;
     flex-direction: column !important;
