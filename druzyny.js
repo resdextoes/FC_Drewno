@@ -65,7 +65,7 @@ async function loadAdmins() {
         const countdown = setInterval(() => {
             container.innerHTML = `
                 <div style="text-align: center; color: white; padding: 20px; width: 100%;">
-                    Budzenie servera informacyjnego... <strong>${secondsLeft}s</strong>
+                    Odswieżania informacji... <strong>${secondsLeft}s</strong>
                 </div>
             `;
             secondsLeft--;
