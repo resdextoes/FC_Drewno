@@ -24,7 +24,7 @@ async function loadAdmins() {
 
         container.innerHTML = `
             <div class="team-group">
-                <h2>Osoby</h2>
+                <h2>Główny skład</h2>
                 <div id="group-main" class="admins-container"></div>
             </div>
             <div class="team-group">
