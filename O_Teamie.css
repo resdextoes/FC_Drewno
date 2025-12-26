@@ -73,7 +73,7 @@ section:last-of-type li {
 
 section:last-of-type li:hover {
     transform: scale(1.05);
-    border-left-color: #00b4ff;
+    border-left-color: #1b5bd8;
 }
 
 @media (max-width: 768px) {
