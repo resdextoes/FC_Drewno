@@ -19,7 +19,7 @@ async function loadAdmins() {
 
     try {
         const response = await fetch("https://discord-api-jqj5.onrender.com/admins");
-        if (!response.ok) throw new Error("API Offline");
+        if (!response.ok) throw new Error();
         const members = await response.json();
 
         container.innerHTML = `
@@ -41,6 +41,8 @@ async function loadAdmins() {
             const isAkademia = AKADEMIA_IDS.includes(member.id);
             const statusClass = member.status || 'offline';
             
+            const showActivity = statusClass !== 'offline' && member.game;
+
             const cardHTML = `
                 <a href="${trackerUrl}" target="_blank" class="admin-link status-${statusClass}">
                     <div class="admin-card">
@@ -49,6 +51,9 @@ async function loadAdmins() {
                             <span class="status-dot ${statusClass}"></span>
                         </div>
                         <p class="admin-name">${member.username}</p>
+                        <p class="admin-activity">
+                            ${showActivity ? `🎮 <span>${member.game}</span>` : ''}
+                        </p>
                     </div>
                 </a>
             `;
@@ -63,11 +68,7 @@ async function loadAdmins() {
     } catch (error) {
         let secondsLeft = 10;
         const countdown = setInterval(() => {
-            container.innerHTML = `
-                <div style="text-align: center; color: white; padding: 20px; width: 100%;">
-                    Odswieżania informacji... <strong>${secondsLeft}s</strong>
-                </div>
-            `;
+            container.innerHTML = `<div style="text-align: center; color: white; padding: 20px; width: 100%;">Odświeżanie... <strong>${secondsLeft}s</strong></div>`;
             secondsLeft--;
             if (secondsLeft < 0) {
                 clearInterval(countdown);

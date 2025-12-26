@@ -134,12 +134,19 @@ section.admin-section {
     text-align: center !important;
     margin-top: 12px !important;
     word-break: break-word !important;
-    transition: color 0.3s ease !important;
 }
 
-.admin-link:hover .admin-name {
-    color: #ffffff !important;
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3) !important;
+.admin-activity {
+    font-size: 11px !important;
+    color: #b9bbbe !important;
+    margin-top: 8px !important;
+    text-align: center !important;
+    min-height: 14px !important;
+}
+
+.admin-activity span {
+    color: #00b4ff !important;
+    font-weight: bold !important;
 }
 
 @media (max-width: 1000px) {
@@ -156,35 +163,9 @@ section.admin-section {
     .team-group { 
         width: 100% !important; 
         max-width: 100% !important;
-        padding: 15px 10px !important;
-    }
-    .admin-section h2:first-of-type {
-        font-size: 28px !important;
-        letter-spacing: 2px !important;
-    }
-    .admins-container {
-        gap: 12px !important;
     }
     .admin-card {
         width: calc(50% - 12px) !important;
         min-width: 140px !important;
-        padding: 15px 5px !important;
-    }
-    .admin-avatar {
-        width: 70px !important;
-        height: 70px !important;
-    }
-    .admin-name {
-        font-size: 14px !important;
-    }
-    .admin-link:hover .admin-card {
-        transform: translateY(-5px) !important;
-    }
-}
-
-@media (max-width: 360px) {
-    .admin-card {
-        width: 100% !important;
-        max-width: 200px !important;
     }
 }
