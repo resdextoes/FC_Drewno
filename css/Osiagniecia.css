@@ -17,7 +17,6 @@ section h1, section h2 {
     background: linear-gradient(135deg, #ffffff 0%, #00b4ff 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: bold;
 }

@@ -7,75 +7,70 @@ const TRACKER_LINKS = {
     "1260533155195125872": "https://rocketleague.tracker.network/rocket-league/profile/epic/%20PeDrORl.4/overview"
 };
 
-const AKADEMIA_IDS = [
-    "929052879879299193",
-    "1060926858759245854",
-    "1260533155195125872"
-];
+const USER_DESCRIPTIONS = {
+    "1119898337223639040": "Fortnitowy placementowiec, Rocket League`owy mid-field player.", // Gokoo
+    "1260529902495727626": "Fortnitowy niby frager (pomiędzy semi-pro, a pro), Rocket League`owy diament z ambicjami SSL`a, EA FC ledwie utzymująca się 5 dywizja z chujowymi piłkarzami.", // hubon
+    "899678477463220305": "Nie gra bo ma chujowy ping, ale w Fortnite nie umie budować, a w Rocket League drugi Szczęsny z 2022 roku, broni nawet atak Wehrmachtu na bramke.", // Resdex
+    "929052879879299193": "Fortnitowy napocony 13 latek ogólnie mocny agent, Rocket League`owy turek kręcocy kebaby w powietrzu.", // Fizzu
+    "1060926858759245854": "W Fortnite nie gra odkąd pamiętam ale kiedyś był dobry, wszechstronny bramkarz w Rocket League, w EA FC walczy o najwyższe wyniki, potrafi z gówno składu wyciagnąć co najlepsze.", // Moli
+    "1260533155195125872": "Wszechstrony player Fortnite oraz Rocket League, odnajdzie się w każdej sytuacji działając, czasem skutecznie." // Kalgon
+};
+
+const AKADEMIA_IDS = ["929052879879299193", "1060926858759245854", "1260533155195125872"];
 
 async function loadAdmins() {
     const container = document.getElementById("admins");
-    if (!container) return;
-
     try {
         const response = await fetch("https://discord-api-jqj5.onrender.com/admins");
-        if (!response.ok) throw new Error();
         const members = await response.json();
 
         container.innerHTML = `
-            <div class="team-group">
-                <h2>Główny skład</h2>
-                <div id="group-main" class="admins-container"></div>
-            </div>
-            <div class="team-group">
-                <h2>Akademia</h2>
-                <div id="group-akademia" class="admins-container"></div>
-            </div>
+            <div class="team-group"><h2>Skład</h2><div id="main" class="admins-container"></div></div>
+            <div class="team-group"><h2>Akademia</h2><div id="akad" class="admins-container"></div></div>
         `;
 
-        const mainGroup = document.getElementById("group-main");
-        const akademiaGroup = document.getElementById("group-akademia");
+        members.forEach(m => {
+            const card = document.createElement('div');
+            card.className = 'admin-card';
+            const showActivity = m.status !== 'offline' && m.game;
+            const activityHtml = showActivity ? `<div class="admin-activity">🎮 <span>${m.game}</span></div>` : '<div class="admin-activity"></div>';
 
-        members.forEach(member => {
-            const trackerUrl = TRACKER_LINKS[member.id] || "#";
-            const isAkademia = AKADEMIA_IDS.includes(member.id);
-            const statusClass = member.status || 'offline';
-            
-            const showActivity = statusClass !== 'offline' && member.game;
-
-            const cardHTML = `
-                <a href="${trackerUrl}" target="_blank" class="admin-link status-${statusClass}">
-                    <div class="admin-card">
-                        <div class="avatar-wrapper">
-                            <img src="${member.avatar}" class="admin-avatar" alt="${member.username}">
-                            <span class="status-dot ${statusClass}"></span>
-                        </div>
-                        <p class="admin-name">${member.username}</p>
-                        <p class="admin-activity">
-                            ${showActivity ? `🎮 <span>${member.game}</span>` : ''}
-                        </p>
-                    </div>
-                </a>
+            card.innerHTML = `
+                <div class="avatar-wrapper">
+                    <img src="${m.avatar}" class="admin-avatar">
+                    <span class="status-dot ${m.status}"></span>
+                </div>
+                <p class="admin-name">${m.username}</p>
+                ${activityHtml}
             `;
-
-            if (isAkademia) {
-                akademiaGroup.innerHTML += cardHTML;
-            } else {
-                mainGroup.innerHTML += cardHTML;
-            }
+            card.onclick = () => openModal(m);
+            document.getElementById(AKADEMIA_IDS.includes(m.id) ? "akad" : "main").appendChild(card);
         });
-
-    } catch (error) {
-        let secondsLeft = 10;
-        const countdown = setInterval(() => {
-            container.innerHTML = `<div style="text-align: center; color: white; padding: 20px; width: 100%;">Odświeżanie... <strong>${secondsLeft}s</strong></div>`;
-            secondsLeft--;
-            if (secondsLeft < 0) {
-                clearInterval(countdown);
-                location.reload();
-            }
-        }, 1000);
-    }
+    } catch (e) { container.innerHTML = "Błąd ładowania."; }
 }
 
-document.addEventListener("DOMContentLoaded", loadAdmins);
+function openModal(m) {
+    const modal = document.getElementById("user-modal");
+    const showActivity = m.status !== 'offline' && m.game;
+    const activityHtml = showActivity ? `<div class="modal-status-text" style="color:#00b4ff; font-size:11px; font-weight:bold; margin-top:5px;">🎮 Gram w: ${m.game}</div>` : '';
+
+    document.getElementById("modal-body").innerHTML = `
+        <div class="modal-left">
+            <img src="${m.avatar}" class="modal-avatar-big">
+            <h2 class="modal-username-big">${m.username}</h2>
+            ${activityHtml}
+        </div>
+        <div class="modal-center">
+            <p class="modal-desc-text">${USER_DESCRIPTIONS[m.id] || "Brak opisu profilu."}</p>
+        </div>
+        <div class="modal-right">
+            <a href="${TRACKER_LINKS[m.id] || '#'}" target="_blank" class="modal-btn-tracker">Otwórz Tracker</a>
+        </div>
+    `;
+    modal.style.display = "flex";
+}
+
+document.querySelector(".close-modal").onclick = () => document.getElementById("user-modal").style.display = "none";
+window.onclick = (e) => { if (e.target.id === "user-modal") e.target.style.display = "none"; };
+
+loadAdmins();
