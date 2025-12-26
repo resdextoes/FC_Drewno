@@ -1,0 +1,190 @@
+.admin-section h2:first-of-type {
+    display: block !important;
+    text-align: center !important;
+    margin-bottom: 30px !important;
+    font-size: 36px !important;
+    background: linear-gradient(135deg, #ffffff 0%, #00b4ff 100%) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    color: transparent !important;
+    letter-spacing: 3px !important;
+    font-weight: bold !important;
+}
+
+section.admin-section {
+    max-width: 1300px !important;
+    width: fit-content !important;
+    margin: 40px auto !important;
+    padding: 20px !important;
+    display: block !important;
+    background: rgba(20, 35, 50, 0.65) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 16px !important;
+    backdrop-filter: blur(12px) !important;
+}
+
+#admins {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    gap: 15px !important;
+    width: 100% !important;
+}
+
+.team-group {
+    flex: 0 1 auto !important;
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 20px !important;
+    padding: 10px 20px 20px 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+    min-width: 200px !important;
+}
+
+.team-group h2 {
+    color: #00b4ff !important;
+    -webkit-text-fill-color: #00b4ff !important;
+    background: none !important;
+    font-size: 24px !important;
+    margin-bottom: 20px !important;
+    text-align: center !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+}
+
+.admins-container {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 20px !important;
+    width: 100% !important;
+}
+
+.admin-link {
+    text-decoration: none !important;
+    color: inherit !important;
+    display: block !important;
+    transition: all 0.3s ease !important;
+}
+
+.admin-card {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 15px !important;
+    padding: 20px 10px !important;
+    width: 155px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    backdrop-filter: blur(10px) !important;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    position: relative !important;
+}
+
+.admin-link:hover .admin-card {
+    transform: translateY(-10px) scale(1.03) !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border-color: #00b4ff !important;
+    box-shadow: 0 10px 25px rgba(0, 180, 255, 0.3) !important;
+}
+
+.avatar-wrapper {
+    position: relative !important;
+    display: inline-block !important;
+}
+
+.admin-avatar {
+    width: 80px !important;
+    height: 80px !important;
+    border-radius: 50% !important;
+    border: 3px solid #00b4ff !important;
+    object-fit: cover !important;
+    transition: all 0.3s ease !important;
+}
+
+.admin-link:hover .admin-avatar {
+    border-color: #ffffff !important;
+    filter: drop-shadow(0 0 8px rgba(0, 180, 255, 0.8)) !important;
+}
+
+.status-dot {
+    position: absolute !important;
+    bottom: 4px !important;
+    right: 4px !important;
+    width: 18px !important;
+    height: 18px !important;
+    border-radius: 50% !important;
+    border: 3px solid #1a2734 !important;
+    z-index: 2 !important;
+}
+
+.status-dot.online { background-color: #43b581 !important; box-shadow: 0 0 5px #43b581 !important; }
+.status-dot.idle { background-color: #faa61a !important; box-shadow: 0 0 5px #faa61a !important; }
+.status-dot.dnd { background-color: #f04747 !important; box-shadow: 0 0 5px #f04747 !important; }
+.status-dot.offline { background-color: #747f8d !important; }
+
+.admin-name {
+    font-weight: 700 !important;
+    font-size: 15px !important;
+    text-align: center !important;
+    margin-top: 12px !important;
+    word-break: break-word !important;
+    transition: color 0.3s ease !important;
+}
+
+.admin-link:hover .admin-name {
+    color: #ffffff !important;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3) !important;
+}
+
+@media (max-width: 1000px) {
+    section.admin-section {
+        width: 95% !important;
+        padding: 20px 10px !important;
+        margin: 20px auto !important;
+    }
+    #admins { 
+        flex-direction: column !important; 
+        align-items: center !important;
+        gap: 25px !important;
+    }
+    .team-group { 
+        width: 100% !important; 
+        max-width: 100% !important;
+        padding: 15px 10px !important;
+    }
+    .admin-section h2:first-of-type {
+        font-size: 28px !important;
+        letter-spacing: 2px !important;
+    }
+    .admins-container {
+        gap: 12px !important;
+    }
+    .admin-card {
+        width: calc(50% - 12px) !important;
+        min-width: 140px !important;
+        padding: 15px 5px !important;
+    }
+    .admin-avatar {
+        width: 70px !important;
+        height: 70px !important;
+    }
+    .admin-name {
+        font-size: 14px !important;
+    }
+    .admin-link:hover .admin-card {
+        transform: translateY(-5px) !important;
+    }
+}
+
+@media (max-width: 360px) {
+    .admin-card {
+        width: 100% !important;
+        max-width: 200px !important;
+    }
+}
