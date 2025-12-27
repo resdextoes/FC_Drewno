@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://resdextoes.github.io/FC_Drewno/sitemap.xml
