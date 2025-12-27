@@ -52,7 +52,7 @@ async function loadAdmins() {
 function openModal(m) {
     const modal = document.getElementById("user-modal");
     const showActivity = m.status !== 'offline' && m.game;
-    const activityHtml = showActivity ? `<div class="modal-status-text" style="color:#00b4ff; font-size:11px; font-weight:bold; margin-top:5px;">🎮 Gram w: ${m.game}</div>` : '';
+    const activityHtml = showActivity ? `<div class="modal-status-text" style="color:#00b4ff; font-size:11px; font-weight:bold; margin-top:5px;">🎮 ${m.game}</div>` : '';
 
     document.getElementById("modal-body").innerHTML = `
         <div class="modal-left">
