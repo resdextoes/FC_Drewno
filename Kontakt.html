@@ -6,30 +6,40 @@
     <meta name="theme-color" content="#1b2733">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Kontakt</title>
-    <link rel="stylesheet" href="css/glowny.css">
-    <link rel="stylesheet" href="css/Kontakt.css">
+    <title>Kontakt | Resdex</title>
     <link rel="icon" type="image/png" href="img/logo.png">
-    <script src="js/footer.js"></script>
-    <script src="js/animacje.js"></script>
+    <link rel="stylesheet" href="css/output.css">
+    <script src="js/footer.js" defer></script>
 </head>
-<body>
-    <header>
-        <img src="img/logo2.png" alt="logo">
-        <a href="index.html">Strona Główna</a>
-        <a href="O_Teamie.html">O Teamie</a>
-        <a href="Kontakt.html">Kontakt</a>
-        <a href="Druzyny.html">Drużyny</a>
-        <a href="Osiagniecia.html">Osiągnięcia</a>
+<body class="flex flex-col min-h-screen">
+
+    <header class="flex items-center justify-center md:justify-end gap-8 px-6 md:px-[60px] h-auto md:h-[70px] bg-black/70 backdrop-blur-md sticky top-0 z-50 flex-col md:flex-row py-4 md:py-0 border-b border-white/5">
+        <img src="img/logo2.png" alt="logo" class="w-[50px] md:mr-auto">
+        <nav class="flex flex-wrap justify-center gap-6">
+            <a href="index.html" class="text-[#dce6ef] no-underline text-base relative transition-colors hover:text-brand-blue after:content-[''] after:absolute after:-bottom-1.5 after:left-0 after:w-0 after:h-[2px] after:bg-brand-blue after:transition-all hover:after:w-full active:scale-95">Strona Główna</a>
+            <a href="O_Teamie.html" class="text-[#dce6ef] no-underline text-base relative transition-colors hover:text-brand-blue after:content-[''] after:absolute after:-bottom-1.5 after:left-0 after:w-0 after:h-[2px] after:bg-brand-blue after:transition-all hover:after:w-full active:scale-95">O Teamie</a>
+            <a href="Kontakt.html" class="text-brand-blue no-underline text-base relative transition-colors after:content-[''] after:absolute after:-bottom-1.5 after:left-0 after:w-full after:h-[2px] after:bg-brand-blue">Kontakt</a>
+            <a href="Druzyny.html" class="text-[#dce6ef] no-underline text-base relative transition-colors hover:text-brand-blue after:content-[''] after:absolute after:-bottom-1.5 after:left-0 after:w-0 after:h-[2px] after:bg-brand-blue after:transition-all hover:after:w-full active:scale-95">Drużyny</a>
+            <a href="Osiagniecia.html" class="text-[#dce6ef] no-underline text-base relative transition-colors hover:text-brand-blue after:content-[''] after:absolute after:-bottom-1.5 after:left-0 after:w-0 after:h-[2px] after:bg-brand-blue after:transition-all hover:after:w-full active:scale-95">Osiągnięcia</a>
+        </nav>
     </header>
-<section class="discord-section">
-    <h1>Discord</h1>
-    <div class="discord-icon">
-        <a href="https://discord.gg/ed94KpfNGD">
-            <img src="img/discord-logo.jpg" alt="dc_logo">
-        </a>
-    </div>
-</section>
+
+    <main class="flex-grow flex flex-col items-center justify-center p-6">
+        <section class="max-w-md w-full bg-white/5 border border-white/10 p-10 rounded-[24px] backdrop-blur-xl shadow-2xl text-center animate-section-in">
+            <h1 class="text-4xl font-black mb-12 tracking-widest uppercase bg-gradient-to-br from-white to-brand-blue bg-clip-text text-transparent">
+                Discord
+            </h1>
+            
+            <div class="discord-icon relative flex justify-center items-center py-6">
+                <a href="https://discord.gg/ed94KpfNGD" class="relative z-10">
+                    <img src="img/discord-logo.jpg" alt="dc_logo" 
+                         class="w-32 h-32 rounded-full border-4 border-white/10 shadow-[0_0_20px_rgba(88,101,242,0.6)] transition-all duration-400 hover:scale-110 hover:rotate-3">
+                </a>
+            </div>
+        </section>
+    </main>
+
     <div id="footer"></div>
+
 </body>
 </html>

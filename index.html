@@ -6,27 +6,35 @@
     <meta name="theme-color" content="#1b2733">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Strona głowna</title>
+    <title>Strona Główna | Resdex</title>
     <link rel="icon" type="image/png" href="img/logo.png">
-    <link rel="stylesheet" href="css/glowny.css">
-    <link rel="stylesheet" href="css/index.css">
-    <script src="js/footer.js"></script>
-    <script src="js/animacje.js"></script>
+    <link rel="stylesheet" href="css/output.css">
+    <script src="js/footer.js" defer></script>
 </head>
-<body>
-    <header>
-        <a href="index.html">Strona Główna</a>
-        <a href="O_Teamie.html">O Teamie</a>
-        <a href="Kontakt.html">Kontakt</a>
-        <a href="Druzyny.html">Drużyny</a>
-        <a href="Osiagniecia.html">Osiągnięcia</a>
+<body class="flex flex-col min-h-screen">
+
+    <header class="flex items-center justify-center md:justify-end gap-8 px-6 md:px-[60px] h-auto md:h-[70px] bg-black/70 backdrop-blur-md sticky top-0 z-50 flex-col md:flex-row py-4 md:py-0 border-b border-white/5">
+        <img src="img/logo2.png" alt="logo" class="w-[50px] md:mr-auto">
+        <nav class="flex flex-wrap justify-center gap-6">
+            <a href="index.html" class="text-brand-blue no-underline text-base relative transition-colors after:content-[''] after:absolute after:-bottom-1.5 after:left-0 after:w-full after:h-[2px] after:bg-brand-blue">Strona Główna</a>
+            <a href="O_Teamie.html" class="text-[#dce6ef] no-underline text-base relative transition-colors hover:text-brand-blue after:content-[''] after:absolute after:-bottom-1.5 after:left-0 after:w-0 after:h-[2px] after:bg-brand-blue after:transition-all hover:after:w-full active:scale-95">O Teamie</a>
+            <a href="Kontakt.html" class="text-[#dce6ef] no-underline text-base relative transition-colors hover:text-brand-blue after:content-[''] after:absolute after:-bottom-1.5 after:left-0 after:w-0 after:h-[2px] after:bg-brand-blue after:transition-all hover:after:w-full active:scale-95">Kontakt</a>
+            <a href="Druzyny.html" class="text-[#dce6ef] no-underline text-base relative transition-colors hover:text-brand-blue after:content-[''] after:absolute after:-bottom-1.5 after:left-0 after:w-0 after:h-[2px] after:bg-brand-blue after:transition-all hover:after:w-full active:scale-95">Drużyny</a>
+            <a href="Osiagniecia.html" class="text-[#dce6ef] no-underline text-base relative transition-colors hover:text-brand-blue after:content-[''] after:absolute after:-bottom-1.5 after:left-0 after:w-0 after:h-[2px] after:bg-brand-blue after:transition-all hover:after:w-full active:scale-95">Osiągnięcia</a>
+        </nav>
     </header>
-    <div>
-        <img src="img/logo2.png" alt="logo" width="10%" height="10%">
-    </div>
-    <section>
-        Pół profesjonalna drużyna E-sportowa skupiająca się na pokonywaniu dzieci w gry komputerowe.
-    </section>
+
+    <main class="flex-grow flex flex-col items-center justify-center p-6">
+        <div class="mb-12 animate-section-in">
+            <img src="img/logo2.png" alt="logo" class="w-48 md:w-64 filter drop-shadow-[0_0_30px_rgba(0,180,255,0.6)]">
+        </div>
+
+        <section class="max-w-4xl w-full bg-white/5 border border-white/10 p-8 md:p-12 rounded-[24px] backdrop-blur-xl shadow-2xl text-center text-[20px] md:text-[26px] leading-relaxed animate-section-in">
+            Pół profesjonalna drużyna E-sportowa skupiająca się na pokonywaniu dzieci w gry komputerowe.
+        </section>
+    </main>
+
     <div id="footer"></div>
+
 </body>
 </html>

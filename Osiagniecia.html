@@ -6,39 +6,85 @@
     <meta name="theme-color" content="#1b2733">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Osiągniecia</title>
-    <link rel="stylesheet" href="css/glowny.css">
-    <link rel="stylesheet" href="css/Osiagniecia.css">
+    <title>Osiągnięcia | Resdex</title>
     <link rel="icon" type="image/png" href="img/logo.png">
-    <script src="js/footer.js"></script>
-    <script src="js/animacje.js"></script>
-    <script src="js/Osiagniecia.js"></script>
+    <link rel="stylesheet" href="css/output.css">
+    <script src="js/footer.js" defer></script>
+    <script src="js/Osiagniecia.js" defer></script>
 </head>
-<body>
-    <header>
-        <img src="img/logo2.png" alt="logo">
-        <a href="index.html">Strona Główna</a>
-        <a href="O_Teamie.html">O Teamie</a>
-        <a href="Kontakt.html">Kontakt</a>
-        <a href="Druzyny.html">Drużyny</a>
-        <a href="Osiagniecia.html">Osiągnięcia</a>
+<body class="flex flex-col min-h-screen">
+
+    <header class="flex items-center justify-center md:justify-end gap-8 px-6 md:px-[60px] h-auto md:h-[70px] bg-black/70 backdrop-blur-md sticky top-0 z-50 flex-col md:flex-row py-4 md:py-0 border-b border-white/5">
+        <img src="img/logo2.png" alt="logo" class="w-[50px] md:mr-auto">
+        <nav class="flex flex-wrap justify-center gap-6">
+            <a href="index.html" class="text-[#dce6ef] no-underline text-base relative transition-colors hover:text-brand-blue after:content-[''] after:absolute after:-bottom-1.5 after:left-0 after:w-0 after:h-[2px] after:bg-brand-blue after:transition-all hover:after:w-full active:scale-95">Strona Główna</a>
+            <a href="O_Teamie.html" class="text-[#dce6ef] no-underline text-base relative transition-colors hover:text-brand-blue after:content-[''] after:absolute after:-bottom-1.5 after:left-0 after:w-0 after:h-[2px] after:bg-brand-blue after:transition-all hover:after:w-full active:scale-95">O Teamie</a>
+            <a href="Kontakt.html" class="text-[#dce6ef] no-underline text-base relative transition-colors hover:text-brand-blue after:content-[''] after:absolute after:-bottom-1.5 after:left-0 after:w-0 after:h-[2px] after:bg-brand-blue after:transition-all hover:after:w-full active:scale-95">Kontakt</a>
+            <a href="Druzyny.html" class="text-[#dce6ef] no-underline text-base relative transition-colors hover:text-brand-blue after:content-[''] after:absolute after:-bottom-1.5 after:left-0 after:w-0 after:h-[2px] after:bg-brand-blue after:transition-all hover:after:w-full active:scale-95">Drużyny</a>
+            <a href="Osiagniecia.html" class="text-brand-blue no-underline text-base relative transition-colors after:content-[''] after:absolute after:-bottom-1.5 after:left-0 after:w-full after:h-[2px] after:bg-brand-blue">Osiągnięcia</a>
+        </nav>
     </header>
-</body>
-    <section>
-        <h1>Osiągnięcia Głownego Składu</h1>
-        <li>Wielokrotne zwycięstwa turniejów 3v3 oraz 2v2 na rangach:</li>
-        <ul id="zloto">Złoto <img src="rangi/Gold.webp"></ul>
-        <ul id="platyna">Platyna<img src="rangi/Platinum.webp"></ul>
-        <ul id="diament">Diament <img src="rangi/Diamont.webp"></ul>
-        <li>Posiadanie tytułu:</li>
-        <ul id="tytul1">S15 <img src="rangi/Platinum.webp"> Tournament Winner</ul>
-        <li>Wielokrotne kwalifikacje na różnorakie turnieje w Fortnite.</li>
-    </section>
-    <section>
-        <h2>Osiągniecia Akademii FC Drewno</h2>
-        <li>Wielokrotne zwycięstwa turniejów 3v3 oraz 2v2 na rangach:</li>
-        <ul id="zloto">Złoto <img src="rangi/Gold.webp"></ul>
-        <ul id="platyna">Platyna<img src="rangi/Platinum.webp"></ul>
-    </section>
+
+    <main class="flex-grow container mx-auto px-6 py-12 space-y-12">
+        
+        <section class="max-w-3xl mx-auto bg-white/5 border border-white/10 p-8 md:p-10 rounded-[24px] backdrop-blur-xl shadow-2xl animate-section-in">
+            <h1 class="text-3xl md:text-4xl font-black text-center mb-8 tracking-wide uppercase bg-gradient-to-br from-white to-brand-blue bg-clip-text text-transparent">
+                Osiągnięcia Głównego Składu
+            </h1>
+
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-brand-blue font-bold text-lg mb-3 border-l-4 border-brand-blue pl-4">Turnieje 3v3 oraz 2v2:</h3>
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-4 bg-white/5 p-3 rounded-lg border border-white/5 border-l-4 border-[#ffd700] text-[#ffd700] transition-all hover:bg-white/10 hover:translate-x-2">
+                            <span>Złoto</span> <img src="rangi/Gold.webp" class="w-7 h-auto">
+                        </div>
+                        <div class="flex items-center gap-4 bg-white/5 p-3 rounded-lg border border-white/5 border-l-4 border-[#e5e4e2] text-[#e5e4e2] transition-all hover:bg-white/10 hover:translate-x-2">
+                            <span>Platyna</span> <img src="rangi/Platinum.webp" class="w-7 h-auto">
+                        </div>
+                        <div class="flex items-center gap-4 bg-white/5 p-3 rounded-lg border border-white/5 border-l-4 border-[#1069bb] text-[#1069bb] transition-all hover:bg-white/10 hover:translate-x-2">
+                            <span>Diament</span> <img src="rangi/Diamont.webp" class="w-7 h-auto">
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-brand-blue font-bold text-lg mb-3 border-l-4 border-brand-blue pl-4">Tytuły:</h3>
+                    <div class="flex items-center gap-4 bg-[#4ade80]/5 p-3 rounded-lg border border-[#4ade80]/20 border-l-4 border-[#4ade80] text-[#4ade80] transition-all hover:bg-[#4ade80]/10 hover:translate-x-2 font-bold">
+                        S15 <img src="rangi/Platinum.webp" class="w-7 h-auto"> Tournament Winner
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-brand-blue font-bold text-lg mb-3 border-l-4 border-brand-blue pl-4">Inne:</h3>
+                    <div class="bg-white/5 p-4 rounded-lg border border-white/5 text-[#dce6ef]">
+                        Wielokrotne kwalifikacje na różnorakie turnieje w Fortnite.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-3xl mx-auto bg-white/5 border border-white/10 p-8 md:p-10 rounded-[24px] backdrop-blur-xl shadow-2xl animate-section-in">
+            <h2 class="text-3xl font-black text-center mb-8 tracking-wide uppercase bg-gradient-to-br from-white to-brand-blue bg-clip-text text-transparent">
+                Osiągnięcia Akademii FC Drewno
+            </h2>
+
+            <div>
+                <h3 class="text-brand-blue font-bold text-lg mb-3 border-l-4 border-brand-blue pl-4">Turnieje 3v3 oraz 2v2:</h3>
+                <div class="space-y-2">
+                    <div class="flex items-center gap-4 bg-white/5 p-3 rounded-lg border border-white/5 border-l-4 border-[#ffd700] text-[#ffd700] transition-all hover:bg-white/10 hover:translate-x-2">
+                        <span>Złoto</span> <img src="rangi/Gold.webp" class="w-7 h-auto">
+                    </div>
+                    <div class="flex items-center gap-4 bg-white/5 p-3 rounded-lg border border-white/5 border-l-4 border-[#e5e4e2] text-[#e5e4e2] transition-all hover:bg-white/10 hover:translate-x-2">
+                        <span>Platyna</span> <img src="rangi/Platinum.webp" class="w-7 h-auto">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
     <div id="footer"></div>
+
+</body>
 </html>

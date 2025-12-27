@@ -1,0 +1,15 @@
+# Zależności projektowe (zajmują najwięcej miejsca)
+node_modules/
+
+# Pliki konfiguracyjne systemów budowania i edytorów
+.vscode/
+package-lock.json
+package.json
+
+# Pliki pomocnicze Tailwind (jeśli nie chcesz ich w repozytorium)
+# Pozostawiamy input.css i output.css, bo są potrzebne do działania strony
+tailwind.config.js
+
+# Pliki systemowe
+.DS_Store
+Thumbs.db

@@ -6,38 +6,80 @@
     <meta name="theme-color" content="#1b2733">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>O Teamie</title>
-    <link rel="stylesheet" href="css/glowny.css">
-    <link rel="stylesheet" href="css/O_Teamie.css">
+    <title>O Teamie | Resdex</title>
     <link rel="icon" type="image/png" href="img/logo.png">
-    <script src="js/footer.js"></script>
-    <script src="js/animacje.js"></script>
+    <link rel="stylesheet" href="css/output.css">
+    <script src="js/footer.js" defer></script>
 </head>
-<body>
-    <header>
-        <img src="img/logo2.png" alt="logo">
-        <a href="index.html">Strona Główna</a>
-        <a href="O_Teamie.html">O Teamie</a>
-        <a href="Kontakt.html">Kontakt</a>
-        <a href="Druzyny.html">Drużyny</a>
-        <a href="Osiagniecia.html">Osiągnięcia</a>
+<body class="flex flex-col min-h-screen">
+
+    <header class="flex items-center justify-center md:justify-end gap-8 px-6 md:px-[60px] h-auto md:h-[70px] bg-black/70 backdrop-blur-md sticky top-0 z-50 flex-col md:flex-row py-4 md:py-0 border-b border-white/5">
+        <img src="img/logo2.png" alt="logo" class="w-[50px] md:mr-auto">
+        <nav class="flex flex-wrap justify-center gap-6">
+            <a href="index.html" class="text-[#dce6ef] no-underline text-base relative transition-colors hover:text-brand-blue after:content-[''] after:absolute after:-bottom-1.5 after:left-0 after:w-0 after:h-[2px] after:bg-brand-blue after:transition-all hover:after:w-full active:scale-95">Strona Główna</a>
+            <a href="O_Teamie.html" class="text-brand-blue no-underline text-base relative transition-colors after:content-[''] after:absolute after:-bottom-1.5 after:left-0 after:w-full after:h-[2px] after:bg-brand-blue">O Teamie</a>
+            <a href="Kontakt.html" class="text-[#dce6ef] no-underline text-base relative transition-colors hover:text-brand-blue after:content-[''] after:absolute after:-bottom-1.5 after:left-0 after:w-0 after:h-[2px] after:bg-brand-blue after:transition-all hover:after:w-full active:scale-95">Kontakt</a>
+            <a href="Druzyny.html" class="text-[#dce6ef] no-underline text-base relative transition-colors hover:text-brand-blue after:content-[''] after:absolute after:-bottom-1.5 after:left-0 after:w-0 after:h-[2px] after:bg-brand-blue after:transition-all hover:after:w-full active:scale-95">Drużyny</a>
+            <a href="Osiagniecia.html" class="text-[#dce6ef] no-underline text-base relative transition-colors hover:text-brand-blue after:content-[''] after:absolute after:-bottom-1.5 after:left-0 after:w-0 after:h-[2px] after:bg-brand-blue after:transition-all hover:after:w-full active:scale-95">Osiągnięcia</a>
+        </nav>
     </header>
-    <section>
-        <h1>O Teamie</h1>
-        <b>FC Drewno</b> to unikalny projekt multizadaniowy. Ich styl w każdej kluczowej grze jest wyjątkowy, specyficzny przez to orginalny:
-        <li><b>Rocket League</b>Ich taktyka to 2-1, dwóch nieustraszonych napastników oraz jeden niepokonany bramkarz. Przeciwnik nie ma chuja strzelić piłki jeśli bramka jest cała osłonięta, a po chwili nie ma piłki. (cyganie zajebali)</li>
-        <li><b>EA FC 26</b>Grają najprostszym „lagiem na napastnika” i betonową obroną. Eksperci nazywają to anty-futbolem, oni nazywają to „ekologią punktów”.</li>
-        <li><b>Fortnite</b>Są królami kamuflażu. Potrafią przesiedzieć cały mecz w jednym domku, waląc konia i mówiąc, że gramy pod "placement", by wygrać mecz jednym celnym strzałem w ostatniej minucie. <br>(zazwyczaj się wyjebać od napalonego 12 letniego Maciusia.)</li>
-    </section>
-    <section>
-        <h1>Dalsze plany</h1>
-        Dążymy do rozwinięcia swojej działalności na inne gry poza Rocket League.
-        <br>
-        <h2>W planach:</h2>
-        <li>Fortnite</li>
-        <li>EA FC</li>
-        <li>...</li>
-    </section>
+
+    <main class="flex-grow container mx-auto px-6 py-12 space-y-12">
+        <section class="max-w-4xl mx-auto bg-white/5 border border-white/10 p-8 md:p-12 rounded-[24px] backdrop-blur-xl shadow-2xl animate-section-in">
+            <h1 class="text-4xl md:text-5xl font-black text-center mb-8 tracking-widest uppercase bg-gradient-to-br from-white to-brand-blue bg-clip-text text-transparent">
+                O Teamie
+            </h1>
+            
+            <b class="block text-center mb-10 text-brand-blue text-2xl md:text-3xl font-bold text-shadow-glow">
+                FC Drewno
+            </b>
+            
+            <p class="text-[#cbd5e0] text-lg text-center mb-10 leading-relaxed">
+                To unikalny projekt multizadaniowy. Ich styl w każdej kluczowej grze jest wyjątkowy, specyficzny i przez to oryginalny:
+            </p>
+
+            <ul class="space-y-6">
+                <li class="group p-6 bg-white/5 rounded-xl border-l-4 border-brand-blue transition-all duration-400 hover:bg-white/10 hover:translate-x-2 hover:scale-[1.02] hover:shadow-[-10px_10px_30px_rgba(0,0,0,0.4)]">
+                    <b class="text-brand-blue text-xl mr-2">Rocket League:</b>
+                    <span class="text-[#dce6ef]">Ich taktyka to 2-1, dwóch nieustraszonych napastników oraz jeden niepokonany bramkarz. Przeciwnik nie ma szans strzelić piłki, jeśli bramka jest cała osłonięta.</span>
+                </li>
+                <li class="group p-6 bg-white/5 rounded-xl border-l-4 border-brand-blue transition-all duration-400 hover:bg-white/10 hover:translate-x-2 hover:scale-[1.02] hover:shadow-[-10px_10px_30px_rgba(0,0,0,0.4)]">
+                    <b class="text-brand-blue text-xl mr-2">EA FC 26:</b>
+                    <span class="text-[#dce6ef]">Grają najprostszym „lagiem na napastnika” i betonową obroną. Eksperci nazywają to anty-futbolem, oni nazywają to „ekologią punktów”.</span>
+                </li>
+                <li class="group p-6 bg-white/5 rounded-xl border-l-4 border-brand-blue transition-all duration-400 hover:bg-white/10 hover:translate-x-2 hover:scale-[1.02] hover:shadow-[-10px_10px_30px_rgba(0,0,0,0.4)]">
+                    <b class="text-brand-blue text-xl mr-2">Fortnite:</b>
+                    <span class="text-[#dce6ef]">Są królami kamuflażu. Potrafią przesiedzieć cały mecz w jednym domku, grając pod "placement", by wygrać mecz jednym celnym strzałem w ostatniej minucie.</span>
+                </li>
+            </ul>
+        </section>
+
+        <section class="max-w-4xl mx-auto bg-white/5 border border-white/10 p-8 md:p-12 rounded-[24px] backdrop-blur-xl shadow-2xl animate-section-in">
+            <h1 class="text-4xl font-black text-center mb-8 tracking-widest uppercase bg-gradient-to-br from-white to-brand-blue bg-clip-text text-transparent">
+                Dalsze plany
+            </h1>
+            
+            <p class="text-[#cbd5e0] text-lg text-center mb-10 leading-relaxed">
+                Dążymy do rozwinięcia swojej działalności na inne gry poza Rocket League.
+            </p>
+
+            <h2 class="text-center text-2xl text-white font-light tracking-widest mb-8">W PLANACH:</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="p-6 bg-white/5 rounded-xl border-l-4 border-[#3601b1] text-center font-bold transition-all duration-400 hover:scale-105 hover:border-[#1b5bd8] hover:bg-white/10">
+                    Fortnite
+                </div>
+                <div class="p-6 bg-white/5 rounded-xl border-l-4 border-[#3601b1] text-center font-bold transition-all duration-400 hover:scale-105 hover:border-[#1b5bd8] hover:bg-white/10">
+                    EA FC
+                </div>
+                <div class="p-6 bg-white/5 rounded-xl border-l-4 border-[#3601b1] text-center font-bold transition-all duration-400 hover:scale-105 hover:border-[#1b5bd8] hover:bg-white/10">
+                    ...
+                </div>
+            </div>
+        </section>
+    </main>
+
     <div id="footer"></div>
+
 </body>
 </html>
