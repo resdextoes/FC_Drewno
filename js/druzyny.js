@@ -8,8 +8,8 @@ const TRACKER_LINKS = {
 };
 
 const USER_DESCRIPTIONS = {
-    "1119898337223639040": "Fortnitowy placementowiec, Rocket League`owy mid-field player.", // Gokoo
-    "1260529902495727626": "Fortnitowy niby frager (pomiędzy semi-pro, a pro), Rocket League`owy diament z ambicjami SSL`a, EA FC ledwie utzymująca się 5 dywizja z chujowymi piłkarzami.", // hubon
+    "1119898337223639040": "Fortnitowy placementowiec,<br>Rocket League`owy mid-field player.", // Gokoo
+    "1260529902495727626": "Fortnitowy niby frager (pomiędzy semi-pro, a pro), Rocket League`owy diament z ambicjami SSL`a,<br>EA FC ledwie utzymująca się 5 dywizja z chujowymi piłkarzami.", // hubon
     "899678477463220305": "Nie gra bo ma chujowy ping, ale w Fortnite nie umie budować, a w Rocket League drugi Szczęsny z 2022 roku, broni nawet atak Wehrmachtu na bramke.", // Resdex
     "929052879879299193": "Fortnitowy napocony 13 latek ogólnie mocny agent, Rocket League`owy turek kręcocy kebaby w powietrzu.", // Fizzu
     "1060926858759245854": "W Fortnite nie gra odkąd pamiętam ale kiedyś był dobry, wszechstronny bramkarz w Rocket League, w EA FC walczy o najwyższe wyniki, potrafi z gówno składu wyciagnąć co najlepsze.", // Moli
