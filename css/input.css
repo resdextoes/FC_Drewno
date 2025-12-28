@@ -37,8 +37,30 @@
   }
 }
 
+@layer components {
+  .nav-link {
+    @apply text-gray-400 text-sm md:text-base font-medium transition-all duration-300 hover:text-white hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.3)] relative py-2;
+  }
+  .nav-link-active {
+    @apply text-brand-blue text-sm md:text-base font-bold relative py-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-brand-blue after:shadow-[0_0_10px_#00b4ff];
+  }
+  .glow-shadow {
+    filter: drop-shadow(0 0 8px rgba(0, 180, 255, 0.4));
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
 #user-modal {
-    @apply backdrop-blur-md bg-brand-blue/10;
+    @apply backdrop-blur-md bg-black/60;
     transition: all 0.3s ease-in-out;
 }
 

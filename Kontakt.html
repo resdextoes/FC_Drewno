@@ -17,15 +17,27 @@
 </head>
 <body class="flex flex-col min-h-screen">
 
-    <header class="flex items-center justify-center md:justify-end gap-8 px-6 md:px-[60px] h-auto md:h-[70px] bg-black/70 backdrop-blur-md sticky top-0 z-50 flex-col md:flex-row py-4 md:py-0 border-b border-white/5">
-        <img src="img/logo2.webp" fetchpriority="high" alt="logo" class="w-[50px] md:mr-auto">
-        <nav class="flex flex-wrap justify-center gap-6">
-            <a href="index.html" class="text-[#dce6ef] no-underline text-base relative transition-colors hover:text-brand-blue after:content-[''] after:absolute after:-bottom-1.5 after:left-0 after:w-0 after:h-[2px] after:bg-brand-blue after:transition-all hover:after:w-full active:scale-95">Strona Główna</a>
-            <a href="O_Teamie.html" class="text-[#dce6ef] no-underline text-base relative transition-colors hover:text-brand-blue after:content-[''] after:absolute after:-bottom-1.5 after:left-0 after:w-0 after:h-[2px] after:bg-brand-blue after:transition-all hover:after:w-full active:scale-95">O Teamie</a>
-            <a href="Kontakt.html" class="text-brand-blue no-underline text-base relative transition-colors after:content-[''] after:absolute after:-bottom-1.5 after:left-0 after:w-full after:h-[2px] after:bg-brand-blue">Kontakt</a>
-            <a href="Druzyny.html" class="text-[#dce6ef] no-underline text-base relative transition-colors hover:text-brand-blue after:content-[''] after:absolute after:-bottom-1.5 after:left-0 after:w-0 after:h-[2px] after:bg-brand-blue after:transition-all hover:after:w-full active:scale-95">Drużyny</a>
-            <a href="Osiagniecia.html" class="text-[#dce6ef] no-underline text-base relative transition-colors hover:text-brand-blue after:content-[''] after:absolute after:-bottom-1.5 after:left-0 after:w-0 after:h-[2px] after:bg-brand-blue after:transition-all hover:after:w-full active:scale-95">Osiągnięcia</a>
-        </nav>
+    <header class="sticky top-0 z-[100] w-full border-b border-white/10 bg-[#0b1120]/90 backdrop-blur-lg">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row md:h-20 items-center justify-between py-3 md:py-0 gap-3">
+                
+                <a href="index.html" class="flex items-center gap-3 transition-transform active:scale-95 shrink-0 group">
+                    <img src="img/logo2.webp" fetchpriority="high" alt="FC Drewno" class="w-10 h-10 md:w-12 md:h-12 drop-shadow-[0_0_8px_rgba(0,180,255,0.5)] group-hover:rotate-3 transition-transform">
+                    <span class="text-white font-black italic tracking-tighter text-lg md:text-xl uppercase">
+                        FC <span class="text-brand-blue">Drewno</span>
+                    </span>
+                </a>
+
+                <nav class="flex items-center justify-center w-full md:w-auto overflow-x-auto no-scrollbar md:overflow-visible pb-2 md:pb-0 gap-1 sm:gap-4 md:gap-6 border-t border-white/5 md:border-none pt-2 md:pt-0">
+                    <a href="index.html" class="nav-link hidden md:block whitespace-nowrap px-3 py-1 text-base">Strona Główna</a>
+                    <a href="O_Teamie.html" class="nav-link whitespace-nowrap px-3 py-1 text-[13px] md:text-base">O Teamie</a>
+                    <a href="Druzyny.html" class="nav-link whitespace-nowrap px-3 py-1 text-[13px] md:text-base">Drużyny</a>
+                    <a href="Osiagniecia.html" class="nav-link whitespace-nowrap px-3 py-1 text-[13px] md:text-base">Osiągnięcia</a>
+                    <a href="Kontakt.html" class="nav-link-active whitespace-nowrap px-3 py-1 text-[13px] md:text-base">Kontakt</a>
+                </nav>
+
+            </div>
+        </div>
     </header>
 
     <main class="flex-grow flex flex-col items-center justify-center p-6">

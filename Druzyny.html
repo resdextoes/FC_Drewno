@@ -10,34 +10,37 @@
     <meta name="keywords" content="FC Drewno, e-sport, gaming, drużyna e-sportowa, turnieje, mecze online, pro gamerzy, pogromcy dzieci, gry komputerowe, FC Drewno skład">
     <meta name="robots" content="index, follow">
     <title>Drużyny | FC Drewno</title>
-    
     <link rel="icon" type="image/webp" href="img/logo.webp">
     <link rel="stylesheet" href="css/output.css">
-    
     <script src="js/footer.js" defer></script>
     <script src="js/druzyny.js" defer></script>
 </head>
 <body class="flex flex-col min-h-screen">
-
-    <header class="flex items-center justify-center md:justify-end gap-8 px-6 md:px-[60px] h-auto md:h-[70px] bg-black/70 backdrop-blur-md sticky top-0 z-50 flex-col md:flex-row py-4 md:py-0 border-b border-white/5">
-        <img src="img/logo2.webp" fetchpriority="high" alt="logo" class="w-[50px] md:mr-auto">
-        <nav class="flex flex-wrap justify-center gap-6">
-            <a href="index.html" class="text-[#dce6ef] no-underline text-base relative transition-colors hover:text-brand-blue after:content-[''] after:absolute after:-bottom-1.5 after:left-0 after:w-0 after:h-[2px] after:bg-brand-blue after:transition-all hover:after:w-full active:scale-95">Strona Główna</a>
-            <a href="O_Teamie.html" class="text-[#dce6ef] no-underline text-base relative transition-colors hover:text-brand-blue after:content-[''] after:absolute after:-bottom-1.5 after:left-0 after:w-0 after:h-[2px] after:bg-brand-blue after:transition-all hover:after:w-full active:scale-95">O Teamie</a>
-            <a href="Kontakt.html" class="text-[#dce6ef] no-underline text-base relative transition-colors hover:text-brand-blue after:content-[''] after:absolute after:-bottom-1.5 after:left-0 after:w-0 after:h-[2px] after:bg-brand-blue after:transition-all hover:after:w-full active:scale-95">Kontakt</a>
-            <a href="Druzyny.html" class="text-brand-blue no-underline text-base relative transition-colors after:content-[''] after:absolute after:-bottom-1.5 after:left-0 after:w-full after:h-[2px] after:bg-brand-blue">Drużyny</a>
-            <a href="Osiagniecia.html" class="text-[#dce6ef] no-underline text-base relative transition-colors hover:text-brand-blue after:content-[''] after:absolute after:-bottom-1.5 after:left-0 after:w-0 after:h-[2px] after:bg-brand-blue after:transition-all hover:after:w-full active:scale-95">Osiągnięcia</a>
-        </nav>
+    <header class="sticky top-0 z-[100] w-full border-b border-white/10 bg-[#0b1120]/90 backdrop-blur-lg">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row md:h-20 items-center justify-between py-3 md:py-0 gap-3">
+                <a href="index.html" class="flex items-center gap-3 transition-transform active:scale-95 shrink-0 group">
+                    <img src="img/logo2.webp" fetchpriority="high" alt="FC Drewno" class="w-10 h-10 md:w-12 md:h-12 drop-shadow-[0_0_8px_rgba(0,180,255,0.5)] group-hover:rotate-3 transition-transform">
+                    <span class="text-white font-black italic tracking-tighter text-lg md:text-xl uppercase">
+                        FC <span class="text-brand-blue">Drewno</span>
+                    </span>
+                </a>
+                <nav class="flex items-center justify-center w-full md:w-auto overflow-x-auto no-scrollbar md:overflow-visible pb-2 md:pb-0 gap-1 sm:gap-4 md:gap-6 border-t border-white/5 md:border-none pt-2 md:pt-0">
+                    <a href="index.html" class="nav-link hidden md:block whitespace-nowrap px-3 py-1 text-base">Strona Główna</a>
+                    <a href="O_Teamie.html" class="nav-link whitespace-nowrap px-3 py-1 text-[13px] md:text-base">O Teamie</a>
+                    <a href="Druzyny.html" class="nav-link-active whitespace-nowrap px-3 py-1 text-[13px] md:text-base">Drużyny</a>
+                    <a href="Osiagniecia.html" class="nav-link whitespace-nowrap px-3 py-1 text-[13px] md:text-base">Osiągnięcia</a>
+                    <a href="Kontakt.html" class="nav-link whitespace-nowrap px-3 py-1 text-[13px] md:text-base">Kontakt</a>
+                </nav>
+            </div>
+        </div>
     </header>
-
     <main class="flex-grow container mx-auto px-6 py-12">
         <section class="max-w-[1300px] w-full mx-auto bg-white/5 border border-white/10 p-8 md:p-12 rounded-[24px] backdrop-blur-xl shadow-2xl animate-section-in relative overflow-hidden">
             <div class="absolute -top-24 -right-24 w-64 h-64 bg-brand-blue/10 rounded-full blur-3xl pointer-events-none"></div>
-            
             <h1 class="text-4xl md:text-6xl font-black text-center mb-16 tracking-tighter uppercase italic bg-gradient-to-br from-white via-white to-brand-blue bg-clip-text text-transparent">
                 Drużyna
             </h1> 
-
             <div id="admins" class="relative z-10 flex flex-wrap items-center justify-center gap-8 min-h-[400px]">
                 <div class="flex flex-col items-center gap-4 text-brand-blue animate-pulse">
                     <svg class="animate-spin h-10 w-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -49,17 +52,14 @@
             </div>
         </section>
     </main>
-
     <div id="user-modal" class="hidden fixed inset-0 z-[10000] flex justify-center items-center p-4">
         <div class="bg-card-bg rounded-[24px] border border-white/10 p-8 w-full max-w-[450px] relative flex flex-col items-center shadow-2xl animate-section-in">
             <button class="close-modal absolute top-4 right-5 text-white/40 text-3xl hover:text-white transition-colors">
                 &times;
             </button>
-            <div id="modal-body" class="flex flex-col items-center w-full gap-4 text-center"></div>
+            <div id="modal-body" class="flex flex-col items-center w-full text-center"></div>
         </div>
     </div>
-
     <div id="footer" class="min-h-[100px]"></div>
-
 </body>
 </html>
