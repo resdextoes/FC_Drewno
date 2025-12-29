@@ -1587,6 +1587,13 @@ section.max-w-fit, section.max-w-2xl, #quote-container {
   background: radial-gradient(circle, rgba(88,101,242,0.5) 0%, rgba(88,101,242,0.25) 40%, rgba(88,101,242,0.05) 65%, transparent 70%);
   animation: var(--animate-discord-pulse);
 }
+.lazy-load {
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+}
+.lazy-load.fade-in {
+  opacity: 1;
+}
 @property --tw-translate-x {
   syntax: "*";
   inherits: false;
