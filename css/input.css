@@ -44,41 +44,29 @@
   .nav-link-active {
     @apply text-brand-blue text-sm md:text-base font-bold relative py-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-brand-blue after:shadow-[0_0_10px_#00b4ff];
   }
-  .glow-shadow {
-    filter: drop-shadow(0 0 8px rgba(0, 180, 255, 0.4));
-  }
 }
 
 @layer utilities {
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-  .no-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-}
-
-#user-modal {
-    @apply backdrop-blur-md bg-black/60;
-    transition: all 0.3s ease-in-out;
-}
-
-.modal-description-container::-webkit-scrollbar {
-    width: 5px;
-}
-
-.modal-description-container::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
-}
-
-.modal-description-container::-webkit-scrollbar-thumb {
-    @apply bg-brand-blue rounded-full;
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 }
 
 .text-shadow-glow {
     text-shadow: 0 0 15px rgba(0, 180, 255, 0.5);
+}
+
+#quote-container {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    will-change: width, height;
+    max-width: calc(100vw - 2rem);
+    display: flex;
+    flex-direction: column;
+}
+
+#quote-text {
+    will-change: opacity, transform, filter;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 #footer footer {
@@ -86,35 +74,19 @@
 }
 
 @media (min-width: 769px) {
-    #footer footer {
-        @apply right-[2%] text-right;
-    }
+    #footer footer { @apply right-[2%] text-right; }
 }
 
 @media (max-width: 768px) {
-    #footer footer {
-        @apply left-1/2 -translate-x-1/2 text-center w-full;
-        bottom: 15px;
-    }
+    #footer footer { @apply left-1/2 -translate-x-1/2 text-center w-full; bottom: 15px; }
 }
 
-#footer footer p {
-    @apply text-white text-[14px] opacity-80 m-0 p-0;
-}
-
-#footer footer a {
-    @apply text-white no-underline font-bold transition-opacity duration-300 hover:opacity-100 hover:underline;
-}
+#footer footer p { @apply text-white text-[14px] opacity-80 m-0 p-0; }
+#footer footer a { @apply text-white no-underline font-bold transition-opacity duration-300 hover:opacity-100 hover:underline; }
 
 .discord-icon::before {
     content: "";
     @apply absolute w-40 h-40 rounded-full z-0;
-    background: radial-gradient(
-        circle,
-        rgba(88,101,242,0.5) 0%,
-        rgba(88,101,242,0.25) 40%,
-        rgba(88,101,242,0.05) 65%,
-        transparent 70%
-    );
+    background: radial-gradient(circle, rgba(88,101,242,0.5) 0%, rgba(88,101,242,0.25) 40%, rgba(88,101,242,0.05) 65%, transparent 70%);
     animation: var(--animate-discord-pulse);
 }
