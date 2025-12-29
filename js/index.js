@@ -6,6 +6,8 @@ const QUOTES = [
     "Kalgon - Teodor zrzygałeś się, to wygląda jak kakao!",
     "Hubon - Jeśli nie zabrał byś mi boosta zrobił bym...",
     "Fizzu - Ale ja nie nadużywam air-roll`a!",
+    "Hubon - Popraw swój cycaty Roleplay.",
+    "Resdex - Shadowdefence`uje mida!",
 ];
 
 let lastIndex = -1;
@@ -14,12 +16,22 @@ const quoteContainer = document.getElementById('quote-container');
 
 function updateDimensions() {
     if (!quoteContainer || !quoteText) return;
+    
+    quoteContainer.style.transition = 'none';
     quoteContainer.style.width = 'auto';
     quoteContainer.style.height = 'auto';
-    const targetWidth = quoteContainer.offsetWidth;
-    const targetHeight = quoteContainer.offsetHeight;
+    
+    const isMobile = window.innerWidth <= 768;
+    const minWidth = isMobile ? 0 : 450;
+    const maxWidth = window.innerWidth * 0.95;
+    
+    let targetWidth = quoteContainer.offsetWidth;
+    
+    if (!isMobile && targetWidth < minWidth) targetWidth = minWidth;
+    if (targetWidth > maxWidth) targetWidth = maxWidth;
+
     quoteContainer.style.width = targetWidth + 'px';
-    quoteContainer.style.height = targetHeight + 'px';
+    quoteContainer.style.height = quoteContainer.offsetHeight + 'px';
 }
 
 function changeQuote() {
@@ -27,7 +39,7 @@ function changeQuote() {
 
     quoteText.style.opacity = "0";
     quoteText.style.filter = "blur(8px)";
-    quoteText.style.transform = "scale(0.95)";
+    quoteText.style.transform = "scale(0.98)";
 
     setTimeout(() => {
         let randomIndex;
@@ -41,18 +53,25 @@ function changeQuote() {
 
         quoteText.innerText = `"${QUOTES[randomIndex]}"`;
 
+        quoteContainer.style.transition = 'none';
         quoteContainer.style.width = 'auto';
         quoteContainer.style.height = 'auto';
-        const newWidth = quoteContainer.offsetWidth;
+        
+        const isMobile = window.innerWidth <= 768;
+        const minWidth = isMobile ? 0 : 450;
+        const maxWidth = window.innerWidth * 0.95;
+        
+        let newWidth = quoteContainer.offsetWidth;
+        if (!isMobile && newWidth < minWidth) newWidth = minWidth;
+        if (newWidth > maxWidth) newWidth = maxWidth;
+        
         const newHeight = quoteContainer.offsetHeight;
 
-        quoteContainer.style.transition = 'none';
         quoteContainer.style.width = oldWidth + 'px';
         quoteContainer.style.height = oldHeight + 'px';
-        
-        quoteContainer.offsetHeight;
+        quoteContainer.offsetHeight; 
 
-        quoteContainer.style.transition = 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+        quoteContainer.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
         quoteContainer.style.width = newWidth + 'px';
         quoteContainer.style.height = newHeight + 'px';
 
