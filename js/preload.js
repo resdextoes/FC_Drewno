@@ -11,6 +11,23 @@ document.addEventListener("DOMContentLoaded", () => {
         link.addEventListener('mouseenter', () => preloadPage(link.href), { once: true });
         link.addEventListener('touchstart', () => preloadPage(link.href), { once: true });
     });
+
+    const lazyImages = document.querySelectorAll('img.lazy-load');
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                if (img.dataset.src) {
+                    img.src = img.dataset.src;
+                    img.onload = () => img.classList.add('fade-in');
+                    if (img.complete) img.classList.add('fade-in');
+                }
+                observer.unobserve(img);
+            }
+        });
+    }, { rootMargin: '50px' });
+
+    lazyImages.forEach(img => imageObserver.observe(img));
 });
 
 if ('serviceWorker' in navigator) {
@@ -23,21 +40,4 @@ if ('serviceWorker' in navigator) {
 window.addEventListener("beforeunload", () => {
     document.body.style.transition = "opacity 0.3s ease";
     document.body.style.opacity = "0";
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-    const lazyImages = document.querySelectorAll('img.lazy-load');
-
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src;
-                img.classList.add('fade-in');
-                observer.unobserve(img);
-            }
-        });
-    });
-
-    lazyImages.forEach(img => imageObserver.observe(img));
 });
