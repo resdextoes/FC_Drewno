@@ -11,26 +11,31 @@
     <meta name="robots" content="index, follow">
     <title>Strona Główna | FC Drewno</title>
     <link rel="icon" type="image/webp" href="img/logo.webp">
-    <link rel="stylesheet" href="css/output.css">
+    <link rel="stylesheet" href="css/output.css?v=2.0">
     <link rel="preload" href="img/logo2.webp" as="image">
     <script src="js/footer.js" defer></script>
-    <script src="js/index.js" defer></script> 
+    <script src="js/index.js?v=2.0" defer></script> 
     <script src="js/blokada.js" defer></script>
-    <script src="js/preload.js" defer></script>
+    <script src="js/preload.js?v=2.0" defer></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.getRegistrations().then(function(registrations) {
+                for(let registration of registrations) { registration.unregister(); }
+            });
+        }
+    </script>
 </head>
 <body class="flex flex-col min-h-screen">
 
     <header class="sticky top-0 z-[100] w-full border-b border-white/10 bg-[#0b1120]/90 backdrop-blur-lg">
         <div class="max-w-7xl mx-auto px-4">
             <div class="flex flex-col md:flex-row md:h-20 items-center justify-between py-3 md:py-0 gap-3">
-                
                 <a href="index.html" class="flex items-center gap-3 transition-transform active:scale-95 shrink-0 group">
                     <img src="img/logo2.webp" fetchpriority="high" alt="FC Drewno" class="w-10 h-10 md:w-12 md:h-12 drop-shadow-[0_0_8px_rgba(0,180,255,0.5)] group-hover:rotate-3 transition-transform">
                     <span class="text-white font-black italic tracking-tighter text-lg md:text-xl uppercase">
                         FC <span class="text-brand-blue">Drewno</span>
                     </span>
                 </a>
-
                 <nav class="flex items-center justify-center w-full md:w-auto overflow-x-auto no-scrollbar md:overflow-visible pb-2 md:pb-0 gap-1 sm:gap-4 md:gap-6 border-t border-white/5 md:border-none pt-2 md:pt-0">
                     <a href="index.html" class="nav-link-active hidden md:block whitespace-nowrap px-3 py-1 text-base">Strona Główna</a>
                     <a href="O_Teamie.html" class="nav-link whitespace-nowrap px-3 py-1 text-[13px] md:text-base">O Teamie</a>
@@ -38,20 +43,17 @@
                     <a href="Osiagniecia.html" class="nav-link whitespace-nowrap px-3 py-1 text-[13px] md:text-base">Osiągnięcia</a>
                     <a href="Kontakt.html" class="nav-link whitespace-nowrap px-3 py-1 text-[13px] md:text-base">Kontakt</a>
                 </nav>
-
             </div>
         </div>
     </header>
 
     <main class="flex-grow flex flex-col items-center justify-center p-6 text-center">
-            <div class="mb-12 animate-section-in">
-                <img src="img/logo2.webp" alt="logo" class="w-48 md:w-64 filter drop-shadow-[0_0_30px_rgba(0,180,255,0.6)]">
-            </div>
-
+        <div class="mb-12 animate-section-in">
+            <img src="img/logo2.webp" alt="logo" class="w-48 md:w-64 filter drop-shadow-[0_0_30px_rgba(0,180,255,0.6)]">
+        </div>
         <section class="max-w-2xl w-full bg-white/5 border border-white/10 p-6 md:p-12 rounded-[24px] backdrop-blur-xl shadow-2xl text-[18px] md:text-[26px] leading-relaxed animate-section-in">
             Pół profesjonalna drużyna E-sportowa skupiająca się na pokonywaniu dzieci w gry komputerowe.
         </section>
-
         <section id="quote-container" class="mt-8 mx-auto w-full max-w-[95vw] md:max-w-3xl bg-white/5 border border-white/10 rounded-[24px] backdrop-blur-xl shadow-2xl animate-section-in relative overflow-hidden group transition-all duration-500 ease-in-out">
             <div class="absolute inset-0 bg-brand-blue/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div class="relative z-10 text-center p-6 md:p-10">
@@ -67,6 +69,5 @@
     </main>
 
     <div id="footer" class="min-h-[100px]"></div>
-
 </body>
 </html>

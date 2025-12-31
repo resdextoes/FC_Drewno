@@ -11,24 +11,28 @@
     <meta name="robots" content="index, follow">
     <title>Kontakt | FC Drewno</title>
     <link rel="icon" type="image/webp" href="img/logo.webp">
-    <link rel="stylesheet" href="css/output.css">
+    <link rel="stylesheet" href="css/output.css?v=2.0">
     <script src="js/footer.js" defer></script>
     <script src="js/blokada.js" defer></script>
-    <script src="js/preload.js" defer></script>
+    <script src="js/preload.js?v=2.0" defer></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.getRegistrations().then(function(registrations) {
+                for(let registration of registrations) { registration.unregister(); }
+            });
+        }
+    </script>
 </head>
 <body class="flex flex-col min-h-screen">
-
     <header class="sticky top-0 z-[100] w-full border-b border-white/10 bg-[#0b1120]/90 backdrop-blur-lg">
         <div class="max-w-7xl mx-auto px-4">
             <div class="flex flex-col md:flex-row md:h-20 items-center justify-between py-3 md:py-0 gap-3">
-                
                 <a href="index.html" class="flex items-center gap-3 transition-transform active:scale-95 shrink-0 group">
                     <img src="img/logo2.webp" fetchpriority="high" alt="FC Drewno" class="w-10 h-10 md:w-12 md:h-12 drop-shadow-[0_0_8px_rgba(0,180,255,0.5)] group-hover:rotate-3 transition-transform">
                     <span class="text-white font-black italic tracking-tighter text-lg md:text-xl uppercase">
                         FC <span class="text-brand-blue">Drewno</span>
                     </span>
                 </a>
-
                 <nav class="flex items-center justify-center w-full md:w-auto overflow-x-auto no-scrollbar md:overflow-visible pb-2 md:pb-0 gap-1 sm:gap-4 md:gap-6 border-t border-white/5 md:border-none pt-2 md:pt-0">
                     <a href="index.html" class="nav-link hidden md:block whitespace-nowrap px-3 py-1 text-base">Strona Główna</a>
                     <a href="O_Teamie.html" class="nav-link whitespace-nowrap px-3 py-1 text-[13px] md:text-base">O Teamie</a>
@@ -36,29 +40,23 @@
                     <a href="Osiagniecia.html" class="nav-link whitespace-nowrap px-3 py-1 text-[13px] md:text-base">Osiągnięcia</a>
                     <a href="Kontakt.html" class="nav-link-active whitespace-nowrap px-3 py-1 text-[13px] md:text-base">Kontakt</a>
                 </nav>
-
             </div>
         </div>
     </header>
-
     <main class="flex-grow flex flex-col items-center justify-center p-6">
         <section class="max-w-md w-full bg-white/5 border border-white/10 p-10 rounded-[24px] backdrop-blur-xl shadow-2xl text-center animate-section-in">
             <h1 class="text-4xl font-black mb-12 tracking-widest uppercase bg-gradient-to-br from-white to-brand-blue bg-clip-text text-transparent">
                 Discord
             </h1>
-            
             <div class="discord-icon relative flex justify-center items-center py-6">
-                <a href="https://discord.gg/ed94KpfNGD" class="relative z-10">
-                    <img src="img/discord-logo.webp" alt="dc_logo" 
-                         class="w-32 h-32 rounded-full border-4 border-white/10 shadow-[0_0_20px_rgba(88,101,242,0.6)] transition-all duration-400 hover:scale-110 hover:rotate-3">
+                <a href="https://discord.gg/ed94KpfNGD" class="relative z-10 block" target="_blank" rel="noopener">
+                    <img data-src="img/discord-logo.webp" src="img/logo.webp" alt="Discord Logo" 
+                         class="w-32 h-32 rounded-full border-4 border-white/10 shadow-[0_0_20px_rgba(88,101,242,0.6)] transition-all duration-400 hover:scale-110 hover:rotate-3 lazy-load">
                 </a>
             </div>
-            
-            <p class="text-white/60 mt-6 text-sm">Kliknij w ikonę, aby dołączyć do serwera.</p>
+            <p class="text-white/60 mt-6 text-sm font-medium">Kliknij w ikonę, aby dołączyć do serwera.</p>
         </section>
     </main>
-
     <div id="footer" class="min-h-[100px]"></div>
-
 </body>
 </html>
