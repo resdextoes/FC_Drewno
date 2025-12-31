@@ -1,7 +1,7 @@
 const QUOTES = [
     "Resdex - ZW, pies mi się zrzygał!",
     "Hubon - Jestem między semi-pro a pro.",
-    "Resdex - Jebany internet psu w dupe!",
+    "Resdex - Walony internet psu w dupe!",
     "Gokoo - Robił byś na tej bramce coś, Wojtuś.",
     "Kalgon - Teodor zrzygałeś się, to wygląda jak kakao!",
     "Hubon - Jeśli nie zabrał byś mi boosta zrobił bym...",
